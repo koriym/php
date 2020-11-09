@@ -452,7 +452,7 @@ class Build
         $isHtml = strrchr($id, '.') === '.html';
 
         if ($isHtml) {
-            $view->setLayout('layout/main');
+            $view->setLayout('layout/html');
         }
 
         // php seems to dump the entire buffer to output if there
