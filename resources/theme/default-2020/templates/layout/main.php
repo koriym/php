@@ -15,25 +15,12 @@
 
     <div class="container">
         <div class="row">
-
-            <div class="col-md-8">
-
-<?= $this->getContent() ?>
-
-            </div>
-
-            <div class="col-md-4">
-
-                <?= $this->render('layout/sidebar') ?>
-
-            </div>
+            <?= $this->render('layout/content') ?>
+            <?= $this->render('layout/sidebar') ?>
         </div>
     </div>
 
     <?= $this->render('layout/footer') ?>
-
-    <script src="/theme/default-2020/vendor/jquery/jquery.min.js"></script>
-    <script src="/theme/default-2020/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
