@@ -1,32 +1,30 @@
-                <div class="card mb-4">
-                    <div class="card-header">
+                <article class="mb-4">
+                    <header>
                         <?= $this->render('templates', $this->config->theme->post_header_prepend ?? []) ?>
 
-                        <h2 class="card-title"><?= $this->anchor(
+                        <h2><?= $this->anchor(
                             $this->post->href,
                             $this->post->title
                         ) ?></h2>
 
                         <?= $this->render('templates', $this->config->theme->post_meta_prepend ?? []) ?>
 
-                        <p class="card-subtitle text-muted">
+                        <p class="text-muted">
                             by <?= $this->escape()->html($this->post->author) ?>
-                            on <?= $this->dateTime()->html($this->post->created, 'l, d M Y') ?>
+                            on <?= $this->dateTime()->html($this->post->created, 'D d M Y') ?>
+                            (<?php foreach ($this->post->tags as $k => $tag) {
+                                echo $this->anchor($tag->href, $tag->title) . ($k + 1 < count($this->post->tags) ? ', ' : '');
+                            } ?>)
                         </p>
-
-                        <p>in <?php foreach ($this->post->tags as $k => $tag): ?>
-                            <?= $this->anchor($tag->href, $tag->title) . ($k + 1 < count($this->post->tags) ? ', ' : ''); ?>
-                        <?php endforeach; ?></p>
 
                         <?= $this->render('templates', $this->config->theme->post_meta_append ?? []) ?>
 
                         <?= $this->render('templates', $this->config->theme->post_header_append ?? []) ?>
-                    </div>
-                    <div class="card-body card-text">
-                        <?= $this->render('templates', $this->config->theme->post_body_prepend ?? []) ?>
-                        <?= $this->body($this->post); ?>
-                        <?= $this->render('templates', $this->config->theme->post_body_append ?? []) ?>
-                    </div>
-                </div>
+                    </header>
+
+                    <?= $this->render('templates', $this->config->theme->post_body_prepend ?? []) ?>
+                    <?= $this->body($this->post); ?>
+                    <?= $this->render('templates', $this->config->theme->post_body_append ?? []) ?>
+                </article>
 
                 <?= $this->render('prevnext') ?>
