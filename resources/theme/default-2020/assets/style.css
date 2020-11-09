@@ -3,3 +3,7 @@ blockquote {
     background-color: #eee;
     border-left: 2rem solid #ccc;
 }
+
+.nav-item:hover {
+    background-color: #ccc;
+}

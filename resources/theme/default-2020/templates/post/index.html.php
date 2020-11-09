@@ -1,4 +1,4 @@
-                <article class="mb-4">
+                <article>
                     <header>
                         <?= $this->render('templates', $this->config->theme->post_header_prepend ?? []) ?>
 

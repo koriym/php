@@ -1,6 +1,6 @@
                 <?php foreach ($this->postIndex->posts as $post): ?>
 
-                <article class="mb-4">
+                <article>
                     <header>
                         <h2><?= $this->anchor(
                             $post->href,
@@ -15,8 +15,9 @@
                         </p>
                     </header>
                     <?= $this->bodyLess($post); ?>
-                    <hr />
                 </article>
+
+                <hr />
 
                 <?php endforeach; ?>
 
