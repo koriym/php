@@ -40,6 +40,14 @@ body>footer {
 
 body>header {
     background-color: #f7f7f7;
+    background-image: url("/theme/default/img/bay-beach-blue.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    height: 240px;
+    margin: 0;
+    padding: 1.5rem;
 }
 
 body>header>p {
@@ -58,6 +66,13 @@ h5,
 h6 {
     font-family: sans-serif;
 }
+
+.navbar {
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
 
 .nav-item {
     font-size: 90%;
