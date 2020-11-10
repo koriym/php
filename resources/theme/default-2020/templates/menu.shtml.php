@@ -3,7 +3,7 @@
         $href,
         $title,
         [
-            'class' => 'nav-link px-3'
+            'class' => 'nav-link'
         ]
     ); ?></li>
 <?php endforeach; ?>

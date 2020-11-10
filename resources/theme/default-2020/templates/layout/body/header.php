@@ -1,4 +1,4 @@
-<header class="text-center">
+<header>
     <?= $this->render('templates', $this->config->theme->layout_header_prepend ?? []) ?>
     <h1><?= $this->config->general->title; ?></h1>
     <p class=><?= $this->config->general->tagline; ?></p>
