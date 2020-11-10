@@ -1,3 +1,19 @@
+a, a.page-link {
+    color: #438287;
+}
+
+a:hover, a.page-link:hover {
+    color: #205d5f;
+}
+
+article aside address::before {
+    content: "by ";
+}
+
+article header {
+    margin-bottom: 2rem;
+}
+
 blockquote {
     background-color: #ededed;
     border-left: 1rem solid #dcdcdc;
@@ -7,18 +23,28 @@ blockquote {
     padding-right: 2rem;
 }
 
+body>header {
+    background-color: #f7f7f7;
+}
+
+body>header>p {
+    font-style: italic;
+}
+
+body>footer {
+    background-color: #f7f7f7;
+}
+
 .nav-item {
-    font-weight: bold;
+    font-size: 90%;
+    font-weight: 550;
+    white-space: nowrap;
 }
 
 .nav-item:hover {
     background-color: #fff;
 }
 
-a, a.page-link {
-    color: #438287;
-}
-
-a:hover, a.page-link:hover {
-    color: #205d5f;
+code {
+    color: black;
 }

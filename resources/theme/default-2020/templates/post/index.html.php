@@ -1,30 +1,36 @@
-                <article>
-                    <header>
-                        <?= $this->render('templates', $this->config->theme->post_header_prepend ?? []) ?>
+<article class="row">
+    <aside class="col-2 text-right pt-1">
+        <?= $this->render('templates', $this->config->theme->post_meta_prepend ?? []) ?>
 
-                        <h2><?= $this->anchor(
-                            $this->post->href,
-                            $this->post->title
-                        ) ?></h2>
+        <time datetime="<?= $this->dateTime()->attr($this->post->created); ?>">
+            <?= $this->dateTime()->html($this->post->created, 'l') ?><br />
+            <span class="display-4"><?= $this->dateTime()->html($this->post->created, 'd') ?></span><br />
+            <?= $this->dateTime()->html($this->post->created, 'M Y') ?><br />
+        </time>
 
-                        <?= $this->render('templates', $this->config->theme->post_meta_prepend ?? []) ?>
+        <address rel="author"><?= $this->escape()->html($this->post->author) ?></p>
 
-                        <p class="text-muted">
-                            by <?= $this->escape()->html($this->post->author) ?>
-                            on <?= $this->dateTime()->html($this->post->created, 'D d M Y') ?>
-                            (<?php foreach ($this->post->tags as $k => $tag) {
-                                echo $this->anchor($tag->href, $tag->title) . ($k + 1 < count($this->post->tags) ? ', ' : '');
-                            } ?>)
-                        </p>
+        <ul class="list-unstyled"><?php foreach ($this->post->tags as $k => $tag): ?>
+            <li class="small"><?= $this->anchor($tag->href, $tag->title); ?></li>
+        <?php endforeach; ?></ul>
 
-                        <?= $this->render('templates', $this->config->theme->post_meta_append ?? []) ?>
+        <?= $this->render('templates', $this->config->theme->post_meta_append ?? []) ?>
+    </aside>
+    <section class="col-10">
+        <header>
+            <?= $this->render('templates', $this->config->theme->post_header_prepend ?? []) ?>
 
-                        <?= $this->render('templates', $this->config->theme->post_header_append ?? []) ?>
-                    </header>
+            <h2><?= $this->anchor(
+                $this->post->href,
+                $this->post->title
+            ) ?></h2>
 
-                    <?= $this->render('templates', $this->config->theme->post_body_prepend ?? []) ?>
-                    <?= $this->body($this->post); ?>
-                    <?= $this->render('templates', $this->config->theme->post_body_append ?? []) ?>
-                </article>
+            <?= $this->render('templates', $this->config->theme->post_header_append ?? []) ?>
+        </header>
+        <?= $this->render('templates', $this->config->theme->post_body_prepend ?? []) ?>
+        <?= $this->body($this->post); ?>
+        <?= $this->render('templates', $this->config->theme->post_body_append ?? []) ?>
+    </section>
+</article>
 
-                <?= $this->render('prevnext') ?>
+<?= $this->render('prevnext') ?>

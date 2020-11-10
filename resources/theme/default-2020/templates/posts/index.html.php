@@ -1,20 +1,28 @@
                 <?php foreach ($this->postIndex->posts as $post): ?>
 
-                <article>
-                    <header>
-                        <h2><?= $this->anchor(
-                            $post->href,
-                            $post->title
-                        ) ?></h2>
-                        <p class="text-muted">
-                            by <?= $this->escape()->html($post->author) ?>
-                            on <?= $this->dateTime()->html($post->created, 'D d M Y') ?>
-                            (<?php foreach ($post->tags as $k => $tag) {
-                                echo $this->anchor($tag->href, $tag->title) . ($k + 1 < count($post->tags) ? ', ' : '');
-                            } ?>)
-                        </p>
-                    </header>
-                    <?= $this->bodyLess($post); ?>
+                <article class="row">
+                    <aside class="col-2 text-right pt-1">
+                        <time datetime="<?= $this->dateTime()->attr($post->created); ?>">
+                            <?= $this->dateTime()->html($post->created, 'l') ?><br />
+                            <span class="display-4"><?= $this->dateTime()->html($post->created, 'd') ?></span><br />
+                            <?= $this->dateTime()->html($post->created, 'M Y') ?><br />
+                        </time>
+
+                        <address rel="author"><?= $this->escape()->html($post->author) ?></p>
+
+                        <ul class="list-unstyled"><?php foreach ($post->tags as $k => $tag): ?>
+                            <li class="small"><?= $this->anchor($tag->href, $tag->title); ?></li>
+                        <?php endforeach; ?></ul>
+                    </aside>
+                    <section class="col-10">
+                        <header>
+                            <h2><?= $this->anchor(
+                                $post->href,
+                                $post->title
+                            ) ?></h2>
+                        </header>
+                        <?= $this->bodyLess($post); ?>
+                    </section>
                 </article>
 
                 <hr />
