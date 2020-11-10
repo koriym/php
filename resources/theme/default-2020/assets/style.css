@@ -1,9 +1,24 @@
 blockquote {
-    padding: 1rem;
-    background-color: #eee;
-    border-left: 2rem solid #ccc;
+    background-color: #ededed;
+    border-left: 1rem solid #dcdcdc;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.nav-item {
+    font-weight: bold;
 }
 
 .nav-item:hover {
-    background-color: #ccc;
+    background-color: #fff;
+}
+
+a, a.page-link {
+    color: #438287;
+}
+
+a:hover, a.page-link:hover {
+    color: #205d5f;
 }

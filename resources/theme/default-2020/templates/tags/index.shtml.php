@@ -1,6 +1,8 @@
+<?php foreach ($this->tags as $tag): ?>
 
-                                    <?php foreach ($this->tags as $tag): ?>
+<li><?=
+    $this->anchor($tag->href, $tag->title)
+    . ' (' . count($tag->posts) . ')'
+; ?></li>
 
-                                    <li><?= $this->anchor($tag->href, $tag->title); ?></li>
-
-                                    <?php endforeach; ?>
+<?php endforeach; ?>
