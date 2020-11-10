@@ -1,5 +1,5 @@
 <article class="row">
-    <aside class="col-2 text-right pt-1">
+    <aside class="col-3 text-right pt-1">
         <?= $this->render('templates', $this->config->theme->post_meta_prepend ?? []) ?>
 
         <time datetime="<?= $this->dateTime()->attr($this->post->created); ?>">
@@ -16,7 +16,7 @@
 
         <?= $this->render('templates', $this->config->theme->post_meta_append ?? []) ?>
     </aside>
-    <section class="col-10">
+    <section class="col-9">
         <header>
             <?= $this->render('templates', $this->config->theme->post_header_prepend ?? []) ?>
 

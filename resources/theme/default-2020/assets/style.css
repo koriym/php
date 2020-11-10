@@ -1,8 +1,10 @@
-a, a.page-link {
+a,
+a.page-link {
     color: #438287;
 }
 
-a:hover, a.page-link:hover {
+a:hover,
+a.page-link:hover {
     color: #205d5f;
 }
 
@@ -14,13 +16,26 @@ article header {
     margin-bottom: 2rem;
 }
 
+article section {
+    font-family: serif;
+    font-size: 110%;
+}
+
 blockquote {
     background-color: #ededed;
     border-left: 1rem solid #dcdcdc;
-    padding-top: 1rem;
     padding-bottom: 1rem;
     padding-left: 2rem;
     padding-right: 2rem;
+    padding-top: 1rem;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+body>footer {
+    background-color: #f7f7f7;
 }
 
 body>header {
@@ -31,8 +46,17 @@ body>header>p {
     font-style: italic;
 }
 
-body>footer {
-    background-color: #f7f7f7;
+code {
+    color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: sans-serif;
 }
 
 .nav-item {
@@ -45,6 +69,6 @@ body>footer {
     background-color: #fff;
 }
 
-code {
-    color: black;
+p.read-more {
+    float: right;
 }
